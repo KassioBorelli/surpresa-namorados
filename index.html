@@ -6,12 +6,10 @@
   <title>Feliz Dia dos Namorados ❤️</title>
   <style>
     body {
-      margin: 0;
-      background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      padding: 20px;
-      color: white;
-    }
+		background: linear-gradient(to bottom, #6a4fa3, #a48fe0); /* novo gradiente roxo */
+		color: #e0d8f5; /* texto lilás claro */
+	}
+
 
     .center {
       text-align: center;
@@ -50,8 +48,8 @@
     }
 
     .button {
-      background: white;
-      color: crimson;
+      background: #e0d8f5; /* botão lilás */
+      color: #3d2d65; /* texto roxo escuro */
       padding: 12px 24px;
       border: none;
       border-radius: 30px;
@@ -65,7 +63,7 @@
     }
 
     .button:hover {
-      background: pink;
+      background: #cbb9e5;
     }
 
     .hidden {
@@ -74,6 +72,10 @@
 
     .bloco {
       margin-top: 40px;
+	  background: rgba(30, 30, 47, 0.7);
+	  padding: 20px;
+	  border-radius: 15px;
+	  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
     }
 
     .bloco h2 {
@@ -106,9 +108,45 @@
     .carousel::-webkit-scrollbar {
       display: none;
     }
+
+    /* 🌟 Kuromi falling animation */
+    .kuromi {
+      position: fixed;
+      top: -100px;
+      width: 40px;
+      z-index: 0;
+      pointer-events: none;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(120vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
+
+  <!-- Kuromis falling -->
+  <script>
+    const NUM_KUROMIS = 15;
+    for (let i = 0; i < NUM_KUROMIS; i++) {
+      const img = document.createElement("img");
+      img.src = "kuromi.png";
+      img.className = "kuromi";
+      img.style.left = Math.random() * 100 + "vw";
+      img.style.animationDuration = (5 + Math.random() * 5) + "s";
+      img.style.animationDelay = (Math.random() * 5) + "s";
+      img.style.width = (30 + Math.random() * 20) + "px";
+      document.body.appendChild(img);
+    }
+  </script>
 
   <div class="center">
     <div class="heart"></div>
