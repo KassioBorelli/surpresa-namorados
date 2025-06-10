@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feliz Dia dos Namorados ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      color: white;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .heart {
+      width: 80px;
+      height: 72px;
+      position: relative;
+      margin: 30px auto;
+      animation: pulse 1s infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 72px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      left: 40px;
+    }
+
+    .heart::after {
+      top: -40px;
+      left: 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .button {
+      background: white;
+      color: crimson;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 25px;
+      transition: background 0.3s;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .button:hover {
+      background: pink;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .bloco {
+      margin-top: 40px;
+    }
+
+    .bloco h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .bloco p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+
+    .carousel {
+      overflow-x: auto;
+      white-space: nowrap;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .carousel img {
+      width: 90%;
+      max-width: 320px;
+      margin: 0 10px;
+      border-radius: 15px;
+      display: inline-block;
+      scroll-snap-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="center">
+    <div class="heart"></div>
+    <h1>Feliz Dia dos Namorados, meu amor! 💖</h1>
+    <button class="button" onclick="mostrarSurpresa()">Clique aqui para uma surpresa</button>
+  </div>
+
+  <div id="surpresa" class="hidden">
+    <!-- Bloco 1 -->
+    <div class="bloco">
+      <h2>O começo</h2>
+      <p>UUUUUUUi! Lembro do frio na barriga que senti nesse dia, quando você me perguntou se queria namorar com você, só consegui dizer sim, mas no fundo eu já sabia que queria você comigo para sempre!</p>
+      <div class="carousel">
+        <img src="bloco1.jpg" alt="Imagem do começo">
+      </div>
+    </div>
+
+    <!-- Bloco 2 -->
+    <div class="bloco">
+      <h2>As pitufas</h2>
+      <p>Você colocou essas 3 xumbicas na minha vida. E minha coleção de arranhões proporcionados pela véia ou pelo buchão maluco junto com cada pelinho de lulu que eu encontro valeram a pena.</p>
+      <div class="carousel">
+        <img src="bloco2_1.jpg" alt="Pitufas 1">
+        <img src="bloco2_2.jpg" alt="Pitufas 2">
+        <img src="bloco2_3.jpg" alt="Pitufas 3">
+      </div>
+    </div>
+
+    <!-- Bloco 3 -->
+    <div class="bloco">
+      <h2>Os shows</h2>
+      <p>Minha companheira de shows, já fomos a alguns shows dos nossos sonhos, mas muitos ainda virão!</p>
+      <div class="carousel">
+        <img src="bloco3_1.jpg" alt="Show 1">
+        <img src="bloco3_2.jpg" alt="Show 2">
+        <img src="bloco3_3.jpg" alt="Show 3">
+      </div>
+    </div>
+
+    <!-- Bloco 4 -->
+    <div class="bloco">
+      <h2>Meu amor, eu te amo!</h2>
+      <p>Obrigado por fazer parte da minha vida e não desistir de mim, eu te amo pra sempre meu amor!</p>
+      <div class="carousel">
+        <img src="bloco4_1.jpg" alt="Amor 1">
+        <img src="bloco4_2.jpg" alt="Amor 2">
+        <img src="bloco4_3.jpg" alt="Amor 3">
+        <img src="bloco4_4.jpg" alt="Amor 4">
+        <img src="bloco4_5.jpg" alt="Amor 5">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function mostrarSurpresa() {
+      document.getElementById('surpresa').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
