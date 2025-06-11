@@ -16,32 +16,16 @@
     }
 
     .heart {
-      width: 80px;
-      height: 72px;
-      position: relative;
-      margin: 30px auto;
-      animation: pulse 1s infinite;
+      width: 120px;
+      margin: 40px auto;
+      animation: pulse 1.2s infinite;
     }
 
-    .heart::before,
-    .heart::after {
-      content: "";
-      position: absolute;
-      width: 80px;
-      height: 72px;
-      background: red;
-      border-radius: 50%;
-    }
-
-    .heart::before {
-      left: 40px;
-    }
-
-    .heart::after {
-      top: -40px;
-      left: 0;
-    }
-
+	.heart-img {
+		width: 100%;
+		display: block;
+	}
+	
     @keyframes pulse {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.1); }
@@ -88,16 +72,19 @@
       margin-bottom: 15px;
     }
 
-    .carousel {
-      overflow-x: auto;
-      white-space: nowrap;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-    }
+	.carousel {
+	  display: flex;
+	  justify-content: center; /* centraliza as imagens no container */
+	  overflow-x: auto;
+	  gap: 10px;
+	  padding: 10px 0;
+	  scroll-snap-type: x mandatory;
+	  -webkit-overflow-scrolling: touch;
+	}
 
     .carousel img {
-      width: 90%;
-      max-width: 320px;
+      width: 95%;
+      max-width: 400px;
       margin: 0 10px;
       border-radius: 15px;
       display: inline-block;
@@ -149,8 +136,10 @@
   </script>
 
   <div class="center">
-    <div class="heart"></div>
-    <h1>Feliz Dia dos Namorados, meu amor! 💖</h1>
+    <div class="heart">
+		<img src="coracao.png" alt="Coração" class="heart-img">
+	</div>
+    <h1>Feliz Dia dos Namorados, meu amor! 💟</h1>
     <button class="button" onclick="mostrarSurpresa()">Clique aqui para uma surpresa</button>
   </div>
 
